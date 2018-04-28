@@ -1,0 +1,152 @@
+
+
+
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\GarrysMod\garrysmod\materials
+Loading c:\program files (x86)\steam\steamapps\common\garrysmod\garrysmod\maps\rp_downtown_em_hs_3.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+material "metal/metalwall026a_nobump" not found.
+Material not found!: METAL/METALWALL026A_NOBUMP
+material "realworldtextures2/wall/wallpaper_70" not found.
+Material not found!: REALWORLDTEXTURES2/WALL/WALLPAPER_70
+material "env/brush/walls/wall_toffee_high" not found.
+Material not found!: ENV/BRUSH/WALLS/WALL_TOFFEE_HIGH
+material "smooth metal/graymetal" not found.
+Material not found!: SMOOTH METAL/GRAYMETAL
+material "wallwoodbrown" not found.
+Material not found!: WALLWOODBROWN
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\garrysmod\garrysmod\gameinfo.txt
+Patching WVT material: maps/rp_downtown_em_hs_3/nature/blendmilground004_2_wvt_patch
+Patching WVT material: maps/rp_downtown_em_hs_3/nature/blendtoxictoxic004a_wvt_patch
+fixing up env_cubemap materials on brush sides...
+env_cubemap pointing at deleted brushside near (-2861, -1547, -472)
+Material glass/glasswindowbreak070b is depending on itself through materialvar $crackmaterial! Ignoring...
+Material glass/glasswindowbreak070b is depending on itself through materialvar $crackmaterial! Ignoring...
+Material glass/glasswindowbreak070b is depending on itself through materialvar $crackmaterial! Ignoring...
+Material glass/glasswindowbreak070b is depending on itself through materialvar $crackmaterial! Ignoring...
+Material glass/glasswindowbreak070b is depending on itself through materialvar $crackmaterial! Ignoring...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 670 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (4)
+writing c:\program files (x86)\steam\steamapps\common\garrysmod\garrysmod\maps\rp_downtown_em_hs_3.prt...Building visibility clusters...
+done (1)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/militia_hdr*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/militia_hdr*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (3) (3771746 bytes)
+Error! prop_static using model "models/props_junk/trashdumpster01a.mdl", which must be used on a dynamic entity (i.e. prop_physics). Deleted.
+Error loading studio model "models/props_junk/trashdumpster01a.mdl"!
+Error loading studio model "models/props_lighting/lightfixture02.mdl"!
+Placing detail props : 0...1...2...3...4...5...6...7...8...Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+Material NATURE/BLENDMILGROUND004_2 uses unknown detail object type militia_sand_grass!
+9...10
+Compacting texture/material tables...
+Reduced 15036 texinfos to 7662
+Reduced 1157 texdatas to 975 (57121 bytes to 49577)
+Writing c:\program files (x86)\steam\steamapps\common\garrysmod\garrysmod\maps\rp_downtown_em_hs_3.bsp
+27 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading c:\program files (x86)\steam\steamapps\common\garrysmod\garrysmod\maps\rp_downtown_em_hs_3.bsp
+No vis information, direct lighting only.
+23582 faces
+4 degenerate faces
+2485666 square feet [357936000.00 square inches]
+99 Displacements
+87267 Square Feet [12566511.00 Square Inches]
+416 direct lights
+0...1...2...3...4...5...6...7...8...9...10Build Patch/Sample Hash Table(s).....Done<0.1308 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                 380/1024        18240/49152    (37.1%) 
+brushes               6409/8192        76908/98304    (78.2%) 
+brushsides           44386/65536      355088/524288   (67.7%) 
+planes               19658/65536      393160/1310720  (30.0%) 
+vertexes             40665/65536      487980/786432   (62.0%) 
+nodes                13343/65536      426976/2097152  (20.4%) 
+texinfos              7662/12288      551664/884736   (62.4%) 
+texdata                975/2048        31200/65536    (47.6%) 
+dispinfos               99/0           17424/0        ( 0.0%) 
+disp_verts            8059/0          161180/0        ( 0.0%) 
+disp_tris            12768/0           25536/0        ( 0.0%) 
+disp_lmsamples      739604/0          739604/0        ( 0.0%) 
+faces                23582/65536     1320592/3670016  (36.0%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces            15529/65536      869624/3670016  (23.7%) 
+leaves               13724/65536      439168/2097152  (20.9%) 
+leaffaces            28927/65536       57854/131072   (44.1%) 
+leafbrushes          17205/65536       34410/131072   (26.3%) 
+areas                   14/256           112/2048     ( 5.5%) 
+surfedges           177391/512000     709564/2048000  (34.6%) 
+edges               111171/256000     444684/1024000  (43.4%) 
+LDR worldlights        416/8192        36608/720896   ( 5.1%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            7/32768          84/393216   ( 0.0%) 
+waterstrips           2246/32768       22460/327680   ( 6.9%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices         40548/65536       81096/131072   (61.9%) 
+cubemapsamples          96/1024         1536/16384    ( 9.4%) 
+overlays                27/512          9504/180224   ( 5.3%) 
+LDR lightdata         [variable]    15613736/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]           0/16777216 ( 0.0%) 
+entdata               [variable]      659405/393216   (167.7%) VERY FULL!
+LDR ambient table    13724/65536       54896/262144   (20.9%) 
+HDR ambient table    13724/65536       54896/262144   (20.9%) 
+LDR leaf ambient     46192/65536     1293376/1835008  (70.5%) 
+HDR leaf ambient     13724/65536      384272/1835008  (20.9%) 
+occluders                6/0             240/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/77576    ( 0.0%) 
+pakfile               [variable]     8723782/0        ( 0.0%) 
+physics               [variable]     3771746/4194304  (89.9%) VERY FULL!
+physics terrain       [variable]           0/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 67764
+Writing c:\program files (x86)\steam\steamapps\common\garrysmod\garrysmod\maps\rp_downtown_em_hs_3.bsp
+4 minutes, 18 seconds elapsed

@@ -1,13 +1,18 @@
 local loaded=loaded or GAMEMODE.Config or player.GetAll()[1]
 local function func()
-	if !game.GetMap():find("rp_downtown_em_hs") then return end
+	if !string.StartWith(game.GetMap(),"rp_downtown_em_hs_") then return end
 	local map_ents={
-		["func_wall"]=true,
 		["func_breakable"]=true,
 		["func_breakable_surf"]=true,
 		["func_button"]=true,
-		["func_tracktrain"]=true,
 		["func_door"]=true,
+		["func_door_rotating"]=true,
+		["func_tracktrain"]=true,
+		["func_wall"]=true,
+		["func_wall_toggle"]=true
+		["func_water_analog"]=true,
+		["prop_door"]=true,
+		["prop_door_rotating"]=true,
 	}
 	hook.Add("PhysgunPickup","_rp_downtown_em_hs_lua",function(Ply,Ent)
 		if Ent and ent:IsValid() and map_ents[ent:GetClass()] then return false end
