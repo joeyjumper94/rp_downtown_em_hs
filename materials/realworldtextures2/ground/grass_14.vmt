@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "RealWorldTextures2\Ground\grass_14"
+	"$surfaceprop" "grass"
+	"$detail" "RealWorldTextures2\detail\dt_grass1"
+	"$detailblendfactor" ".4"
+	"$detailscale" "7"
+} //Realworld Textures Version 2 - Made by TopHATTwaffle - Please credit me if used! - Contact: www.tophattwaffle.com

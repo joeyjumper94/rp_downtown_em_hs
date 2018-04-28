@@ -1,0 +1,8 @@
+"vertexlitgeneric"
+{
+	"$basetexture"	"models\msc\e_leaves3"
+	"$alphatest" 1
+        "$nocull" 1
+	"$model" 1
+	"$nodecal" 1
+}

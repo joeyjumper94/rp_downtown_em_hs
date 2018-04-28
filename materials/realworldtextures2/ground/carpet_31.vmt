@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "RealWorldTextures2\Ground\Carpet_31"
+	"$surfaceprop" "carpet"
+	"$detail" "RealWorldTextures2\detail\dt_carpet1"
+	"$detailblendfactor" ".4"
+	"$detailscale" "6"
+} //Realworld Textures Version 2 - Made by TopHATTwaffle - Please credit me if used! - Contact: www.tophattwaffle.com

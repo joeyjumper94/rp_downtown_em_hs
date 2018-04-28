@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	// Original shader: SphericalEnvMapBlendMaskedBaseTimesLightmap
+	"$envmapsphere" 1
+	"$basealphaenvmapmask" 1
+	"$basetexture" "ajacks/ben_fridgeside"
+	"$envmap" "environment maps/envmap001a"
+	"$surfaceprop" "metal"
+}

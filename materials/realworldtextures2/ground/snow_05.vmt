@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "RealWorldTextures2\Ground\snow_05"
+	"$bumpmap" "RealWorldTextures2\ground\snow_05_nrm"
+	"$surfaceprop" "snow"
+	"$detail" "RealWorldTextures2\detail\dt_snow2"
+	"$detailblendfactor" ".7"
+	"$detailscale" "7"
+} //Realworld Textures Version 2 - Made by TopHATTwaffle - Please credit me if used! - Contact: www.tophattwaffle.com

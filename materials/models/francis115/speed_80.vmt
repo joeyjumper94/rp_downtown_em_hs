@@ -1,0 +1,17 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/francis115/speed_80"
+	"$bumpmap" "models/francis115/back_n"
+
+	"$translucent" 1
+	"$alphatest" 1
+	"$model" "1"
+
+	"$phong" "1"
+	"$phongexponenttexture" "models/francis115/traffic_light_base_normal"
+	"$phongboost"	"6"
+	"$phongfresnelranges"	"[0.05 0.5 1]"
+}
+
+
+

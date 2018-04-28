@@ -1,0 +1,10 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "RealWorldTextures2\Ground\dirt_02"
+	"$bumpmap" "RealWorldTextures2\ground\dirt_02_nrm"
+	"$bumpscale" ".7"
+	"$surfaceprop" "dirt"
+	"$detail" "RealWorldTextures2\detail\detaildirt001a"
+	"$detailblendfactor" ".7"
+	"$detailscale" "4"
+} //Realworld Textures Version 2 - Made by TopHATTwaffle - Please credit me if used! - Contact: www.tophattwaffle.com

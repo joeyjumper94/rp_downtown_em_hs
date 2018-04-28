@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "RealWorldTextures2\Ground\brick_paver_04"
+	"$bumpmap" "RealWorldTextures2\ground\brick_paver_04_nrm"
+	"$surfaceprop" "brick"
+	"$detail" "RealWorldTextures2\detail\dt_stone1"
+	"$detailblendfactor" ".4"
+	"$detailscale" "7"
+} //Realworld Textures Version 2 - Made by TopHATTwaffle - Please credit me if used! - Contact: www.tophattwaffle.com

@@ -1,0 +1,11 @@
+"vertexlitgeneric"
+	{
+	"$basetexture" "models\msc/e_leaves"
+	"$model" 1
+      "$envmaptint" "[.1 .1 .1]"   
+	"$selfIllum" 0
+	"$alphatest" 1
+	"$alpha" 1
+	"$nocull" 1
+	}
+

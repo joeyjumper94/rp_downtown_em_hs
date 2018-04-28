@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$color"				"[1 1 1]"
+	"$baseTexture"			"ajacks/art_woodfloor"
+	"$surfaceprop" "wood"
+	"$envMap"				"env_cubemap"
+	"$envMapTint"				"[0.200000003 0.200000003 0.200000003]"
+}

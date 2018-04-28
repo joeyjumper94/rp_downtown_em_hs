@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "CM_Textures/hospitalfloor"
+	"$surfaceprop" "Concrete"
+}
