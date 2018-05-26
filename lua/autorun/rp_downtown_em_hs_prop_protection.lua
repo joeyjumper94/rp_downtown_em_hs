@@ -22,7 +22,7 @@ local function func()
 		if CLIENT then return end
 		timer.Simple(0,function()
 			for k,v in ipairs(ents.GetAll()) do
-				if v:MapCreationID()!=-1 and !blacklist[v:GetClass()] and !Whitelist[v:GetClass()] and v:GetPhysicsObject():IsValid() then
+				if v:MapCreationID()!=-1 and !blacklist[v:GetClass()] and !whitelist[v:GetClass()] and v:GetPhysicsObject():IsValid() then
 					v:SetNWBool("Untouchable",true)
 				end
 			end
