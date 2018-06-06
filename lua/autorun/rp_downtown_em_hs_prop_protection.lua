@@ -9,14 +9,14 @@ local function func()
 		["func_door_rotating"]=true,
 		["func_reflective_glass"]=true,
 		["func_tracktrain"]=true,
-		["func_wall"]=false,
+		["func_wall"]=true,
 		["func_wall_toggle"]=true,
 		["func_water_analog"]=true,
 		["prop_door"]=true,
 		["prop_door_rotating"]=true,
 	}
 	local whitelist={--any map created entities will not be protected by this script if their class is listed here
-		["func_wall"]=true,
+--		["func_wall"]=true,
 	}
 	local function SetUntouchable()
 		if CLIENT then return end
@@ -61,7 +61,7 @@ local function func()
 		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
 	end)
 	hook.Add("PlayerUse","_rp_downtown_em_hs_lua",function(Ply,Ent)
-----		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
+--		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
 --		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
 	end)
 	hook.Add("CanPlayerUnfreeze","_rp_downtown_em_hs_lua",function(Ply,Ent,PhysObj)
