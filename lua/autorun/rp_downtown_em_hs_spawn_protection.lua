@@ -1,7 +1,6 @@
 
 local line1="rp_downtown_em_hs spawn zone"
 local color1=Color(255,255,255,255)
-if !string.StartWith(game.GetMap(),"rp_downtown_em_hs_") then return end
 local line2="you are free of all damage"
 local color2=Color(255,255,255,255)
 
@@ -14,6 +13,7 @@ local color4=Color(255,255,255,255)
 local line5=""
 local color5=Color(255,255,255,255)
 
+if !string.StartWith(game.GetMap(),"rp_downtown_em_hs_") then return end
 
 local zones={
 	{--spawn area 1
@@ -52,7 +52,10 @@ end
 local function getattacker(CTakeDamageInfo)
 	local Entity=CTakeDamageInfo:GetAttacker()
 	if Entity:GetMoveType()==MOVETYPE_VPHYSICS then--the Entity is a prop
-		return Entity:CPPIGetOwner()
+		local owner=Entity:CPPIGetOwner()
+		if owner and owner:IsValid() then
+			return owner
+		end
 	end
 	return Entity
 end
@@ -60,9 +63,11 @@ hook.Add("EntityTakeDamage","rp_downtown_em_hs_spawn",function(ply,CTakeDamageIn
 	if InZone(ply) then--is the player in spawn?
 		CTakeDamageInfo:SetDamage(0) -- block damage
 		CTakeDamageInfo:SetDamageType(DMG_FALL) -- fall damage doesn't take away armor
+		return true
 	elseif InZone(getattacker(CTakeDamageInfo)) then--is the attacker in spawn?
 		CTakeDamageInfo:SetDamage(0) -- prevent spawn abuse
 		CTakeDamageInfo:SetDamageType(DMG_FALL) -- fall damage doesn't take away armor
+		return true
 	end
 end)
 hook.Add("HUDPaint","rp_downtown_em_hs_spawn",function()
