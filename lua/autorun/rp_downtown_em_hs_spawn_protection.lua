@@ -1,6 +1,6 @@
-
 local line1="rp_downtown_em_hs spawn zone"
 local color1=Color(255,255,255,255)
+
 local line2="you are free of all damage"
 local color2=Color(255,255,255,255)
 
@@ -12,8 +12,6 @@ local color4=Color(255,255,255,255)
 
 local line5=""
 local color5=Color(255,255,255,255)
-
-if !string.StartWith(game.GetMap(),"rp_downtown_em_hs_") then return end
 
 local zones={
 	{--spawn area 1
@@ -39,6 +37,11 @@ local zones={
 		Vector(2425.7951660156,2271.5703125,235.75886535645)
 	},
 }
+local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])
+if !version then return end
+if version>10 then--the tunnel from spawn 3 is shorter in version 11
+	zones[5][1]=Vector(1660.1062011719,1747.7432861328,-67.052406311035)
+end
 local function InZone(ply)
 	if ply and ply:IsValid() then
 		for k,box in ipairs(zones) do

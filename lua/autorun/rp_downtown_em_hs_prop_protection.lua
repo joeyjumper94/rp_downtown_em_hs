@@ -1,6 +1,7 @@
-local loaded=loaded or GAMEMODE and GAMEMODE.Config or player.GetAll()[1]
+local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])
+if !version then return end
+local loaded=GAMEMODE and GAMEMODE.Config or player.GetAll()[1]
 local function func()
-	if !string.StartWith(game.GetMap(),"rp_downtown_em_hs_") then return end
 	local blacklist={--any ent classes in this list cannot be touched in any way except for +use
 		["func_breakable"]=true,
 		["func_breakable_surf"]=true,
@@ -31,42 +32,34 @@ local function func()
 	SetUntouchable()
 	hook.Add("PostCleanupMap","_rp_downtown_em_hs_lua",SetUntouchable)
 	hook.Add("PhysgunPickup","_rp_downtown_em_hs_lua",function(Ply,Ent)
-		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
-		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanDrive","_rp_downtown_em_hs_lua",function(Ply,Ent)
-		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
-		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanTool","_rp_downtown_em_hs_lua",function(Ply,trace,tool)
 		if !trace then return false end
 		local Ent=trace.Entity
-		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
-		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanProperty","_rp_downtown_em_hs_lua",function(Ply,property,Ent)
-		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
-		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanEditVariable","_rp_downtown_em_hs_lua",function(Ent,Ply)
-		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
-		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("OnPhysgunReload","_rp_downtown_em_hs_lua",function(Physgun,Ply)
 		if !(Ply and Ply:IsValid()) then return false end
 		local trace=Ply:GetEyeTrace()
 		if !trace then return false end
 		local Ent=trace.Entity
-		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
-		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("PlayerUse","_rp_downtown_em_hs_lua",function(Ply,Ent)
---		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
---		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+--		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanPlayerUnfreeze","_rp_downtown_em_hs_lua",function(Ply,Ent,PhysObj)
-		if Ent and Ent:IsValid() and blacklist[Ent:GetClass()] then return false end
-		if Ent and Ent:IsValid() and Ent:GetNWBool("Untouchable",false) then return false end
+		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 end
 hook.Add("Initialize","_rp_downtown_em_hs_lua",func)
