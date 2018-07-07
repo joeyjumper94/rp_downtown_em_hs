@@ -1,5 +1,5 @@
 --config for the text shown on screen when in the admin room
-local line1="welcome to the admin sit roomm"
+local line1="welcome to the admin sit room"
 local color1=Color(255,255,255,255)
 
 local line2="the only thing you can really"
