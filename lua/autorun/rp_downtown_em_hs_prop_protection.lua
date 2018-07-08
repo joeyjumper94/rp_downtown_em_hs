@@ -61,6 +61,7 @@ local function func()
 	hook.Add("CanPlayerUnfreeze","_rp_downtown_em_hs_lua",function(Ply,Ent,PhysObj)
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
+	RunConsoleCommand("net_maxfilesize","64")
 end
 hook.Add("Initialize","_rp_downtown_em_hs_lua",func)
 if loaded then func() end
