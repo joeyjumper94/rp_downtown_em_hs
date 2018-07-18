@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	$basetexture	revenants_textures\me2
+	$surfaceprop	metal
+	$model 1
+}

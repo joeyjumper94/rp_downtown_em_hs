@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	$basetexture	revenants_textures\me4
+	$surfaceprop	metal
+}
