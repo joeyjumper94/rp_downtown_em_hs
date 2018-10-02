@@ -1,6 +1,5 @@
 local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])
 if !version then return end
-local loaded=GAMEMODE and GAMEMODE.Config or player.GetAll()[1]
 local function func()
 	local blacklist={--any ent classes in this list cannot be touched in any way except for +use
 		["func_breakable"]=true,
@@ -24,7 +23,7 @@ local function func()
 		timer.Simple(0,function()
 			for k,v in ipairs(ents.GetAll()) do
 				if v:MapCreationID()!=-1 and !blacklist[v:GetClass()] and !whitelist[v:GetClass()] and v:GetPhysicsObject():IsValid() then
-					v:SetNWBool("Untouchable",true)
+					v:SetNWBool('Untouchable',true)
 				end
 			end
 		end)
@@ -61,7 +60,20 @@ local function func()
 	hook.Add("CanPlayerUnfreeze","_rp_downtown_em_hs_lua",function(Ply,Ent,PhysObj)
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
-	RunConsoleCommand("net_maxfilesize","64")
+	if SERVER then
+		RunConsoleCommand("net_maxfilesize","64")
+		resource.AddWorkshop("1438745329")
+		local dl={
+			[12]=1438751408,
+			[13]=1457551875,
+			[14]=1465927908,
+			[15]=1527420462,
+		}
+		dl=dl[version]
+		if dl then
+			resource.AddWorkshop(dl)
+		end
+	end
 end
 hook.Add("Initialize","_rp_downtown_em_hs_lua",func)
-if loaded then func() end
+if GAMEMODE and GAMEMODE.Config or player.GetAll()[1] then func() end
