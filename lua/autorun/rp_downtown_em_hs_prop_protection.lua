@@ -29,25 +29,53 @@ local function func()
 		end)
 	end
 	SetUntouchable()
+	local disabled_til=0
+	if CLIENT then
+		concommand.Add("rp_downtown_em_hs_disable_protection",function(ply,cmd,args)
+			if ply:IsSuperAdmin() then
+				net.Start("rp_downtown_em_hs_disable_protection")
+				net.SendToServer()
+			end
+		end)
+		net.Receive("rp_downtown_em_hs_disable_protection",function(len,ply)
+			disabled_til=net.ReadFloat()
+		end)
+	else
+		net.Receive("rp_downtown_em_hs_disable_protection",function(len,ply)
+			if ply:IsSuperAdmin() then
+				disabled_til=CurTime()+10
+				net.Start("rp_downtown_em_hs_disable_protection")
+				net.WriteFloat(disabled_til)
+				net.Broadcast()
+			end
+		end)
+		util.AddNetworkString("rp_downtown_em_hs_disable_protection")
+	end
 	hook.Add("PostCleanupMap","_rp_downtown_em_hs_lua",SetUntouchable)
 	hook.Add("PhysgunPickup","_rp_downtown_em_hs_lua",function(Ply,Ent)
+		if disabled_til>CurTime() then return end
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanDrive","_rp_downtown_em_hs_lua",function(Ply,Ent)
+		if disabled_til>CurTime() then return end
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanTool","_rp_downtown_em_hs_lua",function(Ply,trace,tool)
+		if disabled_til>CurTime() then return end
 		if !trace then return false end
 		local Ent=trace.Entity
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanProperty","_rp_downtown_em_hs_lua",function(Ply,property,Ent)
+		if disabled_til>CurTime() then return end
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanEditVariable","_rp_downtown_em_hs_lua",function(Ent,Ply)
+		if disabled_til>CurTime() then return end
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("OnPhysgunReload","_rp_downtown_em_hs_lua",function(Physgun,Ply)
+		if disabled_til>CurTime() then return end
 		if !(Ply and Ply:IsValid()) then return false end
 		local trace=Ply:GetEyeTrace()
 		if !trace then return false end
@@ -58,22 +86,9 @@ local function func()
 --		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
 	hook.Add("CanPlayerUnfreeze","_rp_downtown_em_hs_lua",function(Ply,Ent,PhysObj)
+		if disabled_til>CurTime() then return end
 		if Ent and Ent:IsValid() then if blacklist[Ent:GetClass()] or Ent:GetNWBool("Untouchable",false) then return false end end
 	end)
-	if SERVER then
-		RunConsoleCommand("net_maxfilesize","64")
-		resource.AddWorkshop("1438745329")
-		local dl={
-			[12]=1438751408,
-			[13]=1457551875,
-			[14]=1465927908,
-			[15]=1527420462,
-		}
-		dl=dl[version]
-		if dl then
-			resource.AddWorkshop(dl)
-		end
-	end
 end
 hook.Add("Initialize","_rp_downtown_em_hs_lua",func)
 if GAMEMODE and GAMEMODE.Config or player.GetAll()[1] then func() end
