@@ -32,17 +32,15 @@ local function func()
 	local disabled_til=0
 	if CLIENT then
 		concommand.Add("rp_downtown_em_hs_disable_protection",function(ply,cmd,args)
-			if ply:IsSuperAdmin() then
-				net.Start("rp_downtown_em_hs_disable_protection")
-				net.SendToServer()
-			end
+			net.Start("rp_downtown_em_hs_disable_protection")
+			net.SendToServer()
 		end)
 		net.Receive("rp_downtown_em_hs_disable_protection",function(len,ply)
 			disabled_til=net.ReadFloat()
 		end)
 	else
 		net.Receive("rp_downtown_em_hs_disable_protection",function(len,ply)
-			if ply:IsSuperAdmin() then
+			if ply:IsSuperAdmin() or ply.IsListenServerHost and ply:IsListenServerHost() then
 				disabled_til=CurTime()+10
 				net.Start("rp_downtown_em_hs_disable_protection")
 				net.WriteFloat(disabled_til)
