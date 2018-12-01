@@ -66,46 +66,51 @@ hook.Add("PlayerSpawnVehicle","_rp_downtown_em_hs_admin",function(ply,model,name
 end end)
 
 hook.Add("canAdvert","_rp_downtown_em_hs_admin",function(ply,arguments)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("canArrest","_rp_downtown_em_hs_admin",function(ply,vic)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("canBuyAmmo","_rp_downtown_em_hs_admin",function(ply,ammoTable)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
 end end)
 hook.Add("canBuyPistol","_rp_downtown_em_hs_admin",function(ply,shipmentTable)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
 end end)
 hook.Add("canBuyShipment","_rp_downtown_em_hs_admin",function(ply,shipmentTable)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
 end end)
 hook.Add("canBuyVehicle","_rp_downtown_em_hs_admin",function(ply,vehicleTable)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,true,msg
 end end)
 hook.Add("canChangeJob","_rp_downtown_em_hs_admin",function(ply,job)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if true then return end
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("CanChangeRPName","_rp_downtown_em_hs_admin",function(ply,name)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if true then return end
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("canDarkRPUse","_rp_downtown_em_hs_admin",function(ply,entity)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if true then return end
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("canDemote","_rp_downtown_em_hs_admin",function(ply,target,reason)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("canDropWeapon","_rp_downtown_em_hs_admin",function(ply,weapon)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if true then return end
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("canEditLaws","_rp_downtown_em_hs_admin",function(ply,action,arguments)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
+	if true then return end
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,msg
 end end)
 hook.Add("canGoAFK","_rp_downtown_em_hs_admin",function(ply,afk)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return !afk
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return !afk
 end end)
 hook.Add("canSleep","_rp_downtown_em_hs_admin",function(player,force)
-	if ply and ply:IsValid() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,false,msg
+	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then return false--,false,msg
 end end)
 hook.Add("HUDPaint","_rp_downtown_em_hs_admin",function()
 	if LocalPlayer():GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then
