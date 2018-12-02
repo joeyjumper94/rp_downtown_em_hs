@@ -9,12 +9,16 @@ local func=function()
 			[14]=1465927908,
 			[15]=1527420462,
 			[16]=1568720448,
+			[17]=1580922379,
 		}
 		dl=dl[version]
 		if dl then
 			resource.AddWorkshop(dl)
 		else
-			RunConsoleCommand("net_maxfilesize","64")
+			size=file.Size(game.GetWorld():GetModel(),"GAME")*0.000001
+			if size<64 and size>GetConVar("net_maxfilesize"):GetFloat() then
+				RunConsoleCommand("net_maxfilesize",math.ceil(size))
+			end
 		end
 	end
 	if version>=16 and SERVER then
