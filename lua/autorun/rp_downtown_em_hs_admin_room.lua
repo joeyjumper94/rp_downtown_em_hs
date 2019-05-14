@@ -14,7 +14,9 @@ local color4=Color(255,255,255,255)
 local line5=""
 local color5=Color(255,255,255,255)
 --end of config
-local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])
+--local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])\
+local MAP=game.GetMap()
+local version=MAP:StartWith("rp_downtown_em_hs_") and tonumber(MAP:Split("_")[5])
 if !version then return end
 hook.Add("StartCommand","_rp_downtown_em_hs_admin",function(ply,CUserCmd)
 	if ply and ply:IsValid() and !ply:IsAdmin() and ply:GetPos():WithinAABox(Vector(-3911,94,285),Vector(-3305,5466,561)) then

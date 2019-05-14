@@ -37,7 +37,9 @@ local zones={
 		Vector(2426,2272,236)
 	},
 }
-local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])
+--local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])\
+local MAP=game.GetMap()
+local version=MAP:StartWith("rp_downtown_em_hs_") and tonumber(MAP:Split("_")[5])
 if !version then return end
 if version>10 then--the tunnel from spawn 3 is shorter in version 11
 	zones[5][1]=Vector(1660.1062011719,1747.7432861328,-67.052406311035)

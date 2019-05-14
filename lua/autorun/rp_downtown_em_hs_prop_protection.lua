@@ -1,4 +1,6 @@
-local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])
+--local version=tonumber(string.Split(game.GetMap(),"rp_downtown_em_hs_")[2])\
+local MAP=game.GetMap()
+local version=MAP:StartWith("rp_downtown_em_hs_") and tonumber(MAP:Split("_")[5])
 if !version then return end
 local function func()
 	local blacklist={--any ent classes in this list cannot be touched in any way except for +use
@@ -29,6 +31,7 @@ local function func()
 		end)
 	end
 	SetUntouchable()
+	hook.Add("InitPostEntity","_rp_downtown_em_hs_lua",SetUntouchable)
 	local disabled_til=0
 	if CLIENT then
 		concommand.Add("rp_downtown_em_hs_disable_protection",function(ply,cmd,args)
