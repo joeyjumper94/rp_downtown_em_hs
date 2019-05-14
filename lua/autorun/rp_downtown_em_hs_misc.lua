@@ -32,7 +32,8 @@ local func=function()
 					timer.Remove(receiver:EntIndex().."recharge_timer")
 					return false
 				end
-				if tbl.m_flJuice!=tbl.m_iJuice then
+				if receiver.m_iJuice!=tbl.m_iJuice then
+					receiver.m_iJuice=tbl.m_iJuice
 					timer.Create(receiver:EntIndex().."recharge_timer",120,1,function()
 						if receiver && receiver:IsValid() && !RP_DOWNTOWN_EM_HS_BASEMENT_FLOODED then
 							receiver:Fire"recharge"
