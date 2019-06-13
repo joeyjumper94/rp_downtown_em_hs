@@ -55,9 +55,9 @@ local function InZone(ply)
 	return false
 end
 local function getattacker(CTakeDamageInfo)
-	local Entity=CTakeDamageInfo:GetAttacker()
-	if Entity:GetMoveType()==MOVETYPE_VPHYSICS then--the Entity is a prop
-		local owner=Entity:CPPIGetOwner()
+	local Entity=CTakeDamageInfo:GetAttacker() or NULL
+	if Entity:IsValid() and  Entity:GetMoveType()==MOVETYPE_VPHYSICS then--the Entity is a prop
+		local owner=Entity.CPPIGetOwner and Entity:CPPIGetOwner() or NULL
 		if owner and owner:IsValid() then
 			return owner
 		end

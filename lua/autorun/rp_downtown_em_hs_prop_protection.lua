@@ -36,6 +36,7 @@ local function func()
 	if CLIENT then
 		concommand.Add("rp_downtown_em_hs_disable_protection",function(ply,cmd,args)
 			net.Start("rp_downtown_em_hs_disable_protection")
+			net.WriteFloat(math.max(tonumber(args[1])or 10,30))
 			net.SendToServer()
 		end)
 		net.Receive("rp_downtown_em_hs_disable_protection",function(len,ply)
@@ -44,7 +45,7 @@ local function func()
 	else
 		net.Receive("rp_downtown_em_hs_disable_protection",function(len,ply)
 			if ply:IsSuperAdmin() or ply.IsListenServerHost and ply:IsListenServerHost() then
-				disabled_til=CurTime()+10
+				disabled_til=CurTime()+(net.ReadFloat()or 30)
 				net.Start("rp_downtown_em_hs_disable_protection")
 				net.WriteFloat(disabled_til)
 				net.Broadcast()

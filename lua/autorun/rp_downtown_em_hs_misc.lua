@@ -13,14 +13,34 @@ local func=function()
 			["rp_downtown_em_hs_16"]=1568720448,
 			["rp_downtown_em_hs_17"]=1580922379,
 			["rp_downtown_em_hs_18"]=1740842259,
+			{"rp_downtown_em_hs_19"}={
+				716583740,--SG MLP Content Pack 1 Furniture
+				895108486,--SG MLP Content Pack 2 Kitchen
+				902712293,--SG MLP Content Pack 3 Nature
+				910477327,--SG MLP Content Pack 4 Royal
+				959375866,--SG MLP Content Pack 5 Commercial
+				1734210618,--SG MLP Content Pack6 Map Resources
+				1768580571,--RP DownTown EM HS 19
+			},
+		}
+		local allowed={
+			number=true,
+			string=true,
 		}
 		dl=dl[MAP]
-		if dl then
+		if allowed[type(dl)] then
 			resource.AddWorkshop(dl)
+		elseif type(dl)=="table"then
+			for k,v in pairs(dl)do
+				if allowed[type(v)]then
+					resource.AddWorkshop(v)
+				end
+			end
 		else
 			local size=file.Size("maps/"..game.GetMap()..".bsp","GAME")*0.000001
 			if size<64 and size>GetConVar("net_maxfilesize"):GetFloat() then
 				RunConsoleCommand("net_maxfilesize",math.ceil(size))
+				RunConsoleCommand("sv_allowdownload","1")
 			end
 		end
 	end
