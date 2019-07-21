@@ -13,7 +13,7 @@ local func=function()
 			["rp_downtown_em_hs_16"]=1568720448,
 			["rp_downtown_em_hs_17"]=1580922379,
 			["rp_downtown_em_hs_18"]=1740842259,
-			{"rp_downtown_em_hs_19"}={
+			["rp_downtown_em_hs_19"]={
 				716583740,--SG MLP Content Pack 1 Furniture
 				895108486,--SG MLP Content Pack 2 Kitchen
 				902712293,--SG MLP Content Pack 3 Nature
@@ -21,6 +21,15 @@ local func=function()
 				959375866,--SG MLP Content Pack 5 Commercial
 				1734210618,--SG MLP Content Pack6 Map Resources
 				1768580571,--RP DownTown EM HS 19
+			},
+			["rp_downtown_em_hs_20"]={
+				716583740,--SG MLP Content Pack 1 Furniture
+				895108486,--SG MLP Content Pack 2 Kitchen
+				902712293,--SG MLP Content Pack 3 Nature
+				910477327,--SG MLP Content Pack 4 Royal
+				959375866,--SG MLP Content Pack 5 Commercial
+				1734210618,--SG MLP Content Pack6 Map Resources
+				1811327660,--RP DownTown EM HS 20
 			},
 		}
 		local allowed={
@@ -46,8 +55,8 @@ local func=function()
 	end
 	if version>=16 and SERVER then
 		hook.Add("PlayerUse","rp_downtown_em_hs_misc",function(ply,receiver)
-			local tbl=receiver:GetClass()=="item_suitcharger" && receiver:GetSaveTable()
-			if tbl && tbl.spawnflags==24576 then
+			local tbl=receiver:GetClass()=="item_suitcharger" and receiver:GetSaveTable()
+			if tbl and tbl.spawnflags==24576 then
 				if RP_DOWNTOWN_EM_HS_BASEMENT_FLOODED then
 					timer.Remove(receiver:EntIndex().."recharge_timer")
 					return false
@@ -55,7 +64,7 @@ local func=function()
 				if receiver.m_iJuice!=tbl.m_iJuice then
 					receiver.m_iJuice=tbl.m_iJuice
 					timer.Create(receiver:EntIndex().."recharge_timer",120,1,function()
-						if receiver && receiver:IsValid() && !RP_DOWNTOWN_EM_HS_BASEMENT_FLOODED then
+						if receiver and receiver:IsValid() and !RP_DOWNTOWN_EM_HS_BASEMENT_FLOODED then
 							receiver:Fire"recharge"
 						end
 					end)

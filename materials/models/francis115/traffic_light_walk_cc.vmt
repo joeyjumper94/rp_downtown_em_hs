@@ -1,0 +1,17 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/francis115/traffic_light_walk_cc"
+	"$surfaceprop" "glass"
+	"Proxies"
+	{
+		"AnimatedTexture" 
+         	{ 
+     		    "animatedTextureVar" "$basetexture" 
+      	 	    "animatedTextureFrameNumVar" "$frame" 
+       	 	    "animatedTextureFrameRate" "2" 
+        	 }
+
+		
+	}
+
+}

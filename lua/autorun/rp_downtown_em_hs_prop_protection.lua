@@ -36,7 +36,7 @@ local function func()
 	if CLIENT then
 		concommand.Add("rp_downtown_em_hs_disable_protection",function(ply,cmd,args)
 			net.Start("rp_downtown_em_hs_disable_protection")
-			net.WriteFloat(math.max(tonumber(args[1])or 10,30))
+			net.WriteFloat(math.Clamp(tonumber(args[1])or 15,1,30))
 			net.SendToServer()
 		end)
 		net.Receive("rp_downtown_em_hs_disable_protection",function(len,ply)
