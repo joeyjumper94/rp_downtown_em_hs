@@ -1,6 +1,6 @@
 {
-	"title" : "test",
+	"title" : "rp_downtown_em_hs",
 	"type" : "map",
 	"tags" : ["realism","roleplay"],
-	"ignore" : ["*.tga", "*.vcproj", "*.svn*"]
+	"ignore" : [".tga",".vmf"]
 }

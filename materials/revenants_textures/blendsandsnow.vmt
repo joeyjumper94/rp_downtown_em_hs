@@ -1,0 +1,10 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "nature/sandfloor009a"
+	"$bumpmap" "Nature/sandfloor009a_normal"
+	"$basetexture2" "nature/snowfloor001a"
+	"%tooltexture" "revenants_textures/blendsandsnow_tooltexture"
+	"%keywords" "wasteland"
+	"$surfaceprop" "snow"
+	"$bumpbasetexture2withbumpmap" "1"
+}
